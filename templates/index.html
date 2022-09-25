@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Welcome to the NCBI Search tool {% endblock %}</h1>
+
+    <p>To perform a new search please navigate to the <a href="{{ url_for('search') }}">new search form</a> </p>
+    <p>Then enter a search term and the span of years you would like to include.</p>
+
+{% endblock %}

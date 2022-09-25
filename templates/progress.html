@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Your Search is underway.... {% endblock %}</h1>
+
+    <p>The initial search has found {{ count }} records to be processed</p>
+    <p>The job is being split into chunks of {{ chunk }} which will create {{ loops }} call(s)</p>
+    <p>You will be redirected once the data has finished processing </p>
+    <p>For more information on the status of processing please check the console output</p>
+
+
+    <form method="POST" action="" name="forwarder">
+        <input type=hidden name="web_env" value="{{ web_env }}">
+        <input type="hidden" name="query_key" value="{{ q_key }}">
+        <input type=hidden name="chunk" value="{{ chunk }}">
+        <input type="hidden" name="loops" value="{{ loops }}">
+    </form>
+
+{% endblock %}

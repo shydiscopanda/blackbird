@@ -1,0 +1,10 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Search Results for '{{search_config["term"]}}' from {{search_config["year_from"]}} to {{search_config["year_to"]}}  {% endblock %}</h1>
+    <div class='message'>
+        <div>
+            <img src='data:image/png;base64,{{data}}'/>
+        </div>
+    </div>
+{% endblock %}

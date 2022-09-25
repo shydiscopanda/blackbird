@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>{% block title %} Start New Search {% endblock %}</h1>
+    <form method="post">
+        <label for="term">Search Term</label>
+        <br>
+        <input type="text" name="term"
+               placeholder="Enter search term"
+               value="{{ request.form['term'] }}">
+        <br>
+
+        <label for="year_from">Message Content</label>
+        <br>
+        <input name="year_from"
+                  placeholder="1950"
+                  value="{{ request.form['year_from'] }}">
+        <br>
+
+        <label for="year_from">Message Content</label>
+        <br>
+        <input name="year_to"
+                  placeholder="2021"
+                  value="{{ request.form['year_to'] }}">
+        <br>
+        <input type="submit" value="Submit">
+    </form>
+{% endblock %}

@@ -12,7 +12,7 @@ import requests as requests
 from src.dt_classes import Flags, Record
 from src.url_builder import get_fetch_url, get_query_url
 
-RECORDS: Record = None
+RECORDS: defaultdict[set[Record]] = None
 
 
 def is_local() -> None:
@@ -31,6 +31,7 @@ def process_records(xml_response: str, api_call: int, calls: int) -> None:
     :param calls: number of calls to make in total (for debugging logs)
     :return:
     """
+    global RECORDS
     record, flags = None, None
 
     for event, elem in iterparse(StringIO(xml_response), events=["start", "end"]):
@@ -64,7 +65,6 @@ def process_records(xml_response: str, api_call: int, calls: int) -> None:
                     record.publisher_name = elem.text.strip()
                 else:
                     record.publisher_location = elem.text.strip()
-
 
             # CONTROL FLAGS
             if tag in ["ArticleDate", "PubDate"]:

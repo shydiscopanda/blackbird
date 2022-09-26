@@ -29,7 +29,7 @@ def get_query_url(term: str, y_from: int, y_to: int) -> str:
     return url_sanitiser(url + "&".join(params))
 
 
-def get_fetch_url(query_key: str, chunk_size: int, pointer:  int, web_env: int) -> str:
+def get_fetch_url(query_key: str, chunk_size: int, pointer:  int, web_env: str) -> str:
     """
     Create a suitable query string for efetch endpoint
     """

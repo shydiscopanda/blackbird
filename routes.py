@@ -85,4 +85,3 @@ def search():
             return redirect(url_for('progress'))
 
     return render_template('search.html')
-

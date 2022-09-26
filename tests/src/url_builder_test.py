@@ -1,4 +1,4 @@
-from url_builder import get_fetch_url, get_query_url, term_sanitiser, url_sanitiser
+from src.url_builder import get_fetch_url, get_query_url, term_sanitiser, url_sanitiser
 
 
 def test_term_sanitiser():

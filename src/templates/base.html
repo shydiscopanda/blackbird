@@ -31,6 +31,20 @@
             margin: 4px 2px;
             cursor: pointer;
         }
+        .loader {
+            border: 10px solid #f3f3f3;
+            border-top: 10px solid #d64161;
+            border-radius: 50%;
+            width: 15px;
+            height: 15px;
+            animation: spin 2s linear infinite;
+            float: left;
+            margin-right:10px;
+        }
+        @keyframes spin {
+            0% { transform: rotate(0deg); }
+            100% { transform: rotate(360deg); }
+        }
 
     </style>
 </head>
